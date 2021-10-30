@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Draw line spline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="main()">
+    <div class="canvas">
+        <p style="text-align: center; margin:0; padding:0">Click points here:</p>
+        <canvas id="webgl" width="800" height="600">
+            Please use a browser that supports "canvas"
+        </canvas>
+    </div>
+    <div class="parameters">
+        <fieldset>
+            <legend>Control point parameters</legend>
+            <div>
+                <label for="chkBrokenLine"> Broken line:</label>
+                <input type="checkbox" id="chkBrokenLine">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Spline parameters</legend>
+            <div>
+                <label for="chkLineSpline"> Line spline:</label>
+                <input type="checkbox" id="chkLineSpline">
+            </div>
+			<div>
+                <label for="ApproxPolySpline"> Approximate polygon spline:</label>
+                <input type="checkbox" id="ApproxPolySpline">
+            </div>
+            <div>
+                <label for="countSplinePoints"> Count spline points:</label>
+                <input type="text" id="countSplinePoints" value="10" maxlength="3" size="3">
+				
+				<label for="splineDegree"> Spline Degree:</label>
+                <input type="text" id="splineDegree" value="2" maxlength="3" size="3">
+				<label for="Delta"> Delta:</label>
+                <input type="text" id="delta" value="0.1" maxlength="3" size="3">
+            </div>
+            <!-- <fieldset> -->
+                <!-- <legend>Initialize Parametric Coordinate</legend> -->
+                <!-- <div> -->
+                    <!-- <label for="equallySpaced"> equally spaced:</label> -->
+                    <!-- <input type="radio" name="paramCoord" id="equallySpaced" checked> -->
+                <!-- </div> -->
+                <!-- <div> -->
+                    <!-- <label for="chordLength"> chord length:</label> -->
+                    <!-- <input type="radio" name="paramCoord" id="chordLength"> -->
+                <!-- </div> -->
+                <!-- <div> -->
+                    <!-- <label for="centripetalMethod"> centripetal method:</label> -->
+                    <!-- <input type="radio" name="paramCoord" id="centripetalMethod"> -->
+                <!-- </div> -->
+            <!-- </fieldset> -->
+            <fieldset>
+                <legend>Visualize with</legend>
+                <div>
+                    <label for="chkVisualizeWithPoints"> points:</label>
+                    <input type="checkbox" id="chkVisualizeWithPoints" checked>
+                </div>
+                <div>
+                    <label for="chkVisualizeWithLine"> line:</label>
+                    <input type="checkbox" id="chkVisualizeWithLine">
+                </div>
+            </fieldset>
+        </fieldset>
+    </div>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/gl-matrix-min.js"></script>
+    <script src="../lib/EventUtil.js"></script>
+    <script src="1.js"></script>
+</body>
+</html>
